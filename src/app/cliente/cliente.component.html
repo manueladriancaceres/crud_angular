@@ -1,1 +1,18 @@
 <p>cliente works!</p>
+
+<div *ngFor="let cliente of clientes">
+    <a [title]="cliente.nombre + ' detalles'">
+        {{ cliente.id }}    {{ cliente.nombre }}
+    </a>
+    <p *ngIf="cliente.direccion">
+        Direccion: {{ cliente.direccion }}
+    </p>
+</div>
+
+id: <input [(ngModel)]="cliente.id" placeholder="ingrese id"><br/>
+nombre: <input [(ngModel)]="cliente.nombre" placeholder="ingrese id"><br/>
+direccion: <input [(ngModel)]="cliente.direccion" placeholder="ingrese id"><br/>
+
+<button (click)="agregarCliente()">
+    Agregar cliente
+</button>
