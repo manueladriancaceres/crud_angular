@@ -1,0 +1,12 @@
+<p>client-det works!</p>
+{{ cliente.nombre }}
+
+
+id: <input [(ngModel)]="cliente.id" placeholder="ingrese id"><br/>
+nombre: <input [(ngModel)]="cliente.nombre" placeholder="ingrese id"><br/>
+direccion: <input [(ngModel)]="cliente.direccion" placeholder="ingrese id"><br/>
+
+<button type="button" (click)="agregar.emit()">
+    Agregar cliente
+</button>
+

@@ -1,12 +1,21 @@
 <p>cliente works!</p>
 
 <div *ngFor="let cliente of clientes">
+    {{ cliente.id }}    {{ cliente.nombre }} {{ cliente.direccion }}
+    <button (click)="eliminarCliente(cliente)">
+        Eliminar cliente
+    </button>    
+    <button (click)="modificarCliente(cliente)">
+        Modificar cliente
+    </button>    
+    <!--
     <a [title]="cliente.nombre + ' detalles'">
         {{ cliente.id }}    {{ cliente.nombre }}
     </a>
     <p *ngIf="cliente.direccion">
         Direccion: {{ cliente.direccion }}
     </p>
+    -->
 </div>
 
 id: <input [(ngModel)]="cliente.id" placeholder="ingrese id"><br/>
@@ -16,3 +25,9 @@ direccion: <input [(ngModel)]="cliente.direccion" placeholder="ingrese id"><br/>
 <button (click)="agregarCliente()">
     Agregar cliente
 </button>
+
+<br/>
+objeto
+{{ cliente.nombre }}
+detalle
+<app-client-det [cliente]="cliente" (agregar)="agregarCliente()"/>

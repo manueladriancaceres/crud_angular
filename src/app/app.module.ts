@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 
 import { ClienteComponent } from './cliente/cliente.component';
+import { ClientDetComponent } from './client-det/client-det.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ClienteComponent
+    ClienteComponent,
+    ClientDetComponent
   ],
   imports: [
     BrowserModule,
