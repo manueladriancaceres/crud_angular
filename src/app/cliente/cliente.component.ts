@@ -21,11 +21,11 @@ export class ClienteComponent implements OnInit{
     ];
   }
   
-  agregarCliente(): void {
+  agregarCliente(cliente: Cliente): void {
     this.clientes.push(
-      {id: this.cliente.id,
-        nombre: this.cliente.nombre, 
-        direccion: this.cliente.direccion},
+      {id: cliente.id,
+        nombre: cliente.nombre, 
+        direccion: cliente.direccion},
     );
   }
 
@@ -33,8 +33,12 @@ export class ClienteComponent implements OnInit{
     this.clientes = this.clientes.filter(c => c !== cliente);
   }
 
-  modificarCliente(cliente: Cliente): void {
-    this.clientes[this.clientes.indexOf(cliente)] = {...this.cliente};
+  seleccionarCliente(cliente: Cliente): void {
+    this.cliente = {...cliente};
   }
 
+  modificarCliente(cliente: Cliente): void {
+    console.log('modificar datos en pather ' + this.clientes.filter(c=> c.id == cliente.id)[0].direccion );
+    this.clientes[this.clientes.indexOf(this.clientes.filter(c=> c.id == cliente.id)[0])] = {...cliente};
+  }
 }

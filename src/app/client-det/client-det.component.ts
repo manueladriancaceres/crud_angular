@@ -10,7 +10,15 @@ import { Cliente } from '../model/Cliente.model';
 export class ClientDetComponent {
 
   @Input() cliente: Cliente = {id:0,nombre:'',direccion:''};
-  @Output() agregar = new EventEmitter();
+  @Output() agregar = new EventEmitter<Cliente>();
+  @Output() modificar = new EventEmitter<Cliente>();
 
+  enviarDatos(): void {
+    this.agregar.emit(this.cliente);
+  }
+
+  modificarDatos(): void {
+    this.modificar.emit(this.cliente);
+  }
 
 }
